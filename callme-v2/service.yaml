@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata: 
+ name: "callme-service"
+ labels: 
+  app: "callme-service"
+spec: 
+ ports: 
+  - port: 8091
+    name: http
+ selector: 
+  app: "callme-service"
+ type: ClusterIP

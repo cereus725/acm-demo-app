@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata: 
+ name: "caller-service"
+ labels: 
+  app: "caller-service"
+spec: 
+ ports: 
+  - port: 8090
+    name: http
+ selector: 
+  app: "caller-service"
+ type: ClusterIP

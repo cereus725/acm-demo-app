@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: "apps/v1"
+metadata: 
+ name: "caller-service"
+ labels: 
+  app: "caller-service"
+spec: 
+ replicas: 1
+ selector: 
+  matchLabels: 
+   app: "caller-service"
+ template: 
+  metadata: 
+   labels: 
+    app: "caller-service"
+  spec: 
+   containers: 
+    - name: "caller"
+      image: "docker.io/cereus725/caller-service:v1"
+      imagePullPolicy: IfNotPresent
+      ports: 
+       - containerPort: 8090
+      env:
+        - name: CALLME_SERVICE_HOST
+          value: callme-service.callsample.svc.clusterset.local
+      resources: 
+       limits: 
