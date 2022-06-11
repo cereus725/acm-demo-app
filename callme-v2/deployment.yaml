@@ -17,7 +17,7 @@ spec:
    containers: 
     - name: "callme-service"
       image: "docker.io/cereus725/callme-service:v2"
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: Always
       ports: 
        - containerPort: 8091
       resources: 

@@ -17,7 +17,7 @@ spec:
    containers: 
     - name: "caller"
       image: "docker.io/cereus725/caller-service:v1"
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: Always
       ports: 
        - containerPort: 8090
       env:
